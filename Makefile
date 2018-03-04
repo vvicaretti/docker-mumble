@@ -20,15 +20,15 @@ run:
 		${IMAGE_NAME}
 	docker logs mumble 2>&1 | grep SUPERUSER_PASSWORD
 
-systemd:
+setup:
 	cp -f systemd/docker-mumble.service /etc/systemd/system
 	cp -f systemd/mumble-ssl.service /etc/systemd/system
 	cp -f systemd/mumble-ssl.timer /etc/systemd/system
-	cp -f nginx/mumble.conf /etc/nginx/site-enabled/mumble.conf
+	cp -f nginx/mumble.conf /etc/nginx/sites-enabled/mumble.conf
 	systemctl daemon-reload
 	systemctl enable docker-mumble.service
 	systemctl enable mumble-ssl.timer
 	systemctl start docker-mumble.service
 	systemctl start mumble-ssl.timer
 
-install: build run systemd
+install: build setup run
