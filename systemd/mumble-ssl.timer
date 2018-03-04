@@ -1,0 +1,9 @@
+[Unit]
+Description=Run mumble-ssl weekly
+
+[Timer]
+OnCalendar=monthly
+Persistent=true
+
+[Install]
+WantedBy=timers.target

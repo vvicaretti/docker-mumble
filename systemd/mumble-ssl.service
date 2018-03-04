@@ -1,0 +1,10 @@
+[Unit]
+Description=Renew Mumble certificate
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/certbot --config /etc/letsencrypt/configs/<YOUR_URL> certonly -n --force-renewal
+ExecStartPost=/bin/systemctl restart docker-mumble.service
+
+[Install]
+WantedBy=multi-user.target
