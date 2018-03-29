@@ -1,7 +1,7 @@
 **Mumble** is a VOIP application which allows users to talk to each other via
 the same server. It uses a client-server architecture, and encrypts all
 communication to ensure user privacy. **Murmur** is the server that Mumble
-clients to connect to. [Learn More][vendor-mumble].
+clients to connect to.
 
 How to start it:
 
@@ -60,8 +60,8 @@ server {
 
 If the environment variable `SUPERUSER_PASSWORD` is not defined when creating
 the container, a password will be automatically generated. To view the password
-for any container at any time, look at the container's logs. As an example, to
-view the SuperUser password is for an instance running in a container
+for any container at any time, look at the container's logs.
+As an example, to view the SuperUser password for an instance running in a container
 named `mumble`:
 
 ```
